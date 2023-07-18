@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <style>
+        .button {
+          background-color: #4CAF50;
+          border: none;
+          color: white;
+          padding: 15px 32px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 12px;
+          margin: 4px 4px;
+          cursor: pointer;
+        }
+        </style>
+      <script>
+        const t=[];
+        let s=0;
+      function addRow() {
+        //adding value to t
+        t.push( document.getElementById('inputNumber').value); 
+        //show t in paragraph tab with seperator  " , "
+        document.getElementById('tab').innerHTML=' tab = '+t.join(" , ");
+        // taking copy of t 
+        M=[...t];
+        //sorting M
+        document.getElementById('tri').innerHTML='tri = '+M.sort(function(a, b){return a - b});
+        //Min
+        document.getElementById('min').innerHTML='min = '+M[0];
+        //Max
+        document.getElementById('max').innerHTML='max = '+M[M.length-1];
+        //Somme
+        s += parseInt(document.getElementById('inputNumber').value);
+        document.getElementById('sum').innerHTML='somme  = '+s;
+}
+
+      </script>  
+   </head>
+<body>
+    <label for="fname">Entrer un Entier:</label>
+    <input type="number" id="inputNumber"  onchange="addRow()">
+    
+    <p id="tab" > </p>
+    <p id="min" > </p>
+    <p id="max"  > </p>
+    <p id="sum"  > </p>
+    <p id="tri" > </p>
+
+</body>
+</html>
